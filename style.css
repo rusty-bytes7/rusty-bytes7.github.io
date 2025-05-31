@@ -8,7 +8,8 @@
     height:100vh;
     background: url('images/IMG_4850.JPG');
     background-size:cover;
-    position:center 50%;
+    background-position: center 50%;
+    position:center;
 }
 /* text css above hero image*/
 .hero_title {
