@@ -6,9 +6,9 @@
 /* hero background image */
 .bgimage {
     height:100vh;
-    background: url('images/IMG_4814 (1).jpg');
+    background: url('images/IMG_4850.JPG');
     background-size:cover;
-    position:relative;
+    position:center 30%;
 }
 /* text css above hero image*/
 .hero_title {
