@@ -62,3 +62,10 @@
     background-color: #5b18c2 !important;
     border-color: #5b18c2 !important;
 }
+
+/* card image sizing */
+.card-img-top {
+    height: 300px;           /* Set your desired height */
+    object-fit: cover;       /* Ensures the image covers the area and is cropped evenly */
+    width: 100%;             /* Ensures full width of the card */
+}
