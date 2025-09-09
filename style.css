@@ -69,3 +69,16 @@
     object-fit: cover;       /* Ensures the image covers the area and is cropped evenly */
     width: 100%;             /* Ensures full width of the card */
 }
+
+/* skills section styling */
+.skill-icon {
+    font-size: 1.35rem;
+    width: 28px;
+    text-align: center;
+}
+.skill-item .progress {
+    height: 1.1rem;
+}
+.skill-item .progress-bar {
+    transition: width 1.2s ease-in-out;
+}
