@@ -82,3 +82,19 @@
 .skill-item .progress-bar {
     transition: width 1.2s ease-in-out;
 }
+
+/* center skills list and bars */
+#skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center; /* center each skill-item horizontally */
+}
+.skill-item {
+    width: 100%;
+    max-width: 520px; /* constrain width so bars don't span entire column */
+    margin: 0 auto;
+}
+.skill-item .d-flex {
+    justify-content: center; /* center icon and title */
+}

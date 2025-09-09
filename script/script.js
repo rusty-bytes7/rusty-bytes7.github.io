@@ -21,10 +21,10 @@ navLinks.forEach((l) => {
 // Skills rendering and animation
 const skills = [
     { name: 'Python', level: 85, color: 'bg-success', icon: 'fab fa-python' },
-    { name: 'SQL / Databases', level: 80, color: 'bg-info', icon: 'fas fa-database' },
-    { name: 'JavaScript / Front-end', level: 70, color: 'bg-warning', icon: 'fab fa-js' },
+    { name: 'SQL / Databases', level: 70, color: 'bg-info', icon: 'fas fa-database' },
+    { name: 'JavaScript / Front-end', level: 50, color: 'bg-warning', icon: 'fab fa-js' },
     { name: 'Git / Version Control', level: 75, color: 'bg-primary', icon: 'fab fa-git' },
-    { name: 'Lab Informatics / Healthcare IT', level: 78, color: 'bg-secondary', icon: 'fas fa-notes-medical' }
+    { name: 'Laboratory Skills', level: 99, color: 'bg-secondary', icon: 'fas fa-notes-medical' }
 ];
 
 function renderSkills() {
