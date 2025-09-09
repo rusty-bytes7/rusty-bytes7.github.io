@@ -45,13 +45,7 @@ const CATEGORIES = [
             { name: 'Software design principles', level: 70, icon: 'fas fa-project-diagram', color: PURPLES.light }
         ]
     },
-    {
-        title: 'Version Control & Collaboration',
-        items: [
-            { name: 'Git', level: 75, icon: 'fab fa-git', color: PURPLES.mid },
-            { name: 'GitHub', level: 75, icon: 'fab fa-github', color: PURPLES.deep },
-        ]
-    },
+    
     {
         title: 'Web Development',
         items: [
