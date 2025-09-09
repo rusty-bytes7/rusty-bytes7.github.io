@@ -36,8 +36,9 @@ const skills = [
 
 function renderSkills() {
     const container = document.getElementById('skills-list');
-    if (!container) return;
-    const fragment = document.createDocumentFragment();
+    const left = document.getElementById('skills-list-left');
+    const right = document.getElementById('skills-list-right');
+    if (!left || !right) return;
 
     // helper: map numeric level (0-100) to qualitative label
     function levelToLabel(level) {
@@ -57,7 +58,7 @@ function renderSkills() {
         return html;
     }
 
-    skills.forEach(s => {
+    skills.forEach((s, idx) => {
         const wrapper = document.createElement('div');
         wrapper.className = 'mb-3 skill-item';
 
@@ -70,10 +71,10 @@ function renderSkills() {
             </div>
         `;
 
-        fragment.appendChild(wrapper);
+        // append alternately to left and right to keep balance
+        if (idx % 2 === 0) left.appendChild(wrapper);
+        else right.appendChild(wrapper);
     });
-
-    container.appendChild(fragment);
 }
 
 function animateSkills(entries, observer) {
@@ -91,9 +92,9 @@ function animateSkills(entries, observer) {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderSkills();
-    const skillsCol = document.getElementById('skills-column');
-    if (skillsCol) {
-        const obs = new IntersectionObserver(animateSkills, { threshold: 0.3 });
-        obs.observe(skillsCol);
+    const skillsRow = document.getElementById('skills-row');
+    if (skillsRow) {
+        const obs = new IntersectionObserver(animateSkills, { threshold: 0.2 });
+        obs.observe(skillsRow);
     }
 });
