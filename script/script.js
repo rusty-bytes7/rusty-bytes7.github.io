@@ -27,48 +27,40 @@ const PURPLES = {
 };
 
 // Categories & skills (you can edit these levels later)
+// pared-down categories with high-priority skills
 const CATEGORIES = [
-    // Core Technical Skills group (left column)
     {
-        title: 'Core Technical Programming Skills',
+        title: 'Core Technical Skills',
         items: [
-            { name: 'Python (pandas, matplotlib, data analysis)', level: 85, icon: 'fab fa-python', color: PURPLES.mid },
-            { name: 'JavaScript (front-end)', level: 50, icon: 'fab fa-js', color: PURPLES.deep },
-            { name: 'SQL', level: 50, icon: 'fas fa-database', color: PURPLES.light }
+            { name: 'Python (pandas, matplotlib)', level: 85, icon: 'fab fa-python', color: PURPLES.mid },
+            { name: 'SQL', level: 80, icon: 'fas fa-database', color: PURPLES.light },
+            { name: 'JavaScript (front-end)', level: 70, icon: 'fab fa-js', color: PURPLES.deep }
         ]
     },
     {
         title: 'Software Development',
         items: [
             { name: 'Data structures & algorithms', level: 70, icon: 'fas fa-code', color: PURPLES.mid },
-            { name: 'Object-oriented programming', level: 75, icon: 'fas fa-cubes', color: PURPLES.mid },
             { name: 'Software design principles', level: 70, icon: 'fas fa-project-diagram', color: PURPLES.light }
         ]
     },
-    
     {
-        title: 'Web Development',
+        title: 'Version Control & Collaboration',
         items: [
-            { name: 'HTML / CSS / Bootstrap', level: 65, icon: 'fab fa-html5', color: PURPLES.mid }
+            { name: 'Git & GitHub', level: 75, icon: 'fab fa-git', color: PURPLES.mid }
         ]
     },
-    // Healthcare IT & Data group (right column)
     {
         title: 'Healthcare IT & Data',
         items: [
-            { name: 'Laboratory Information Systems (Epic Beaker)', level: 90, icon: 'fas fa-hospital', color: PURPLES.mid },
-            { name: 'Clinical Workflows & Lab Informatics', level: 90, icon: 'fas fa-notes-medical', color: PURPLES.mid },
-            { name: 'HL7 / FHIR (familiar)', level: 30, icon: 'fas fa-exchange-alt', color: PURPLES.light },
-            { name: 'Data Visualization & Dashboards (pandas, matplotlib, seaborn)', level: 80, icon: 'fas fa-chart-bar', color: PURPLES.mid }
+            { name: 'Epic Beaker (LIS)', level: 85, icon: 'fas fa-hospital', color: PURPLES.mid },
+            { name: 'Data visualization & dashboards', level: 80, icon: 'fas fa-chart-bar', color: PURPLES.mid }
         ]
     },
-    // Domain Expertise group (right column)
     {
         title: 'Domain Expertise',
         items: [
-            { name: 'Clinical Laboratory Science (diagnostics, instrumentation)', level: 100, icon: 'fas fa-vials', color: PURPLES.deep },
-            { name: 'Healthcare Operations & Workflow Optimization', level: 80, icon: 'fas fa-tasks', color: PURPLES.mid },
-            { name: 'Kaizen / Continuous Improvement (KPI, Lean concepts)', level: 80, icon: 'fas fa-chart-line', color: PURPLES.light }
+            { name: 'Clinical Laboratory Science', level: 95, icon: 'fas fa-vials', color: PURPLES.deep }
         ]
     }
 ];
@@ -96,11 +88,9 @@ function renderSkills() {
         return html;
     }
 
-    // split categories into left and right columns
-    const leftCats = CATEGORIES.slice(0, 4);
-    const rightCats = CATEGORIES.slice(4);
-
-    function renderCategory(cat, container) {
+    // distribute categories alternately between left and right for balance
+    CATEGORIES.forEach((cat, idx) => {
+        const container = (idx % 2 === 0) ? left : right;
         const catWrap = document.createElement('div');
         catWrap.className = 'skill-category mb-3';
         const title = document.createElement('h4');
@@ -123,10 +113,7 @@ function renderSkills() {
         });
 
         container.appendChild(catWrap);
-    }
-
-    leftCats.forEach(cat => renderCategory(cat, left));
-    rightCats.forEach(cat => renderCategory(cat, right));
+    });
 }
 
 function animateSkills(entries, observer) {
