@@ -33,14 +33,14 @@ const CATEGORIES = [
         title: 'Core Technical Skills',
         items: [
             { name: 'Python (pandas, matplotlib)', level: 85, icon: 'fab fa-python', color: PURPLES.mid },
-            { name: 'SQL', level: 80, icon: 'fas fa-database', color: PURPLES.light },
+            { name: 'SQL', level: 50, icon: 'fas fa-database', color: PURPLES.light },
             { name: 'JavaScript (front-end)', level: 70, icon: 'fab fa-js', color: PURPLES.deep }
         ]
     },
     {
         title: 'Software Development',
         items: [
-            { name: 'Data structures & algorithms', level: 70, icon: 'fas fa-code', color: PURPLES.mid },
+            { name: 'Data structures & algorithms', level: 50, icon: 'fas fa-code', color: PURPLES.mid },
             { name: 'Software design principles', level: 70, icon: 'fas fa-project-diagram', color: PURPLES.light }
         ]
     },
@@ -53,8 +53,9 @@ const CATEGORIES = [
     {
         title: 'Healthcare IT & Data',
         items: [
-            { name: 'Epic Beaker (LIS)', level: 85, icon: 'fas fa-hospital', color: PURPLES.mid },
-            { name: 'Data visualization & dashboards', level: 80, icon: 'fas fa-chart-bar', color: PURPLES.mid }
+            { name: 'Epic Beaker (LIS)', level: 95, icon: 'fas fa-hospital', color: PURPLES.mid },
+            { name: 'Data visualization & dashboards', level: 80, icon: 'fas fa-chart-bar', color: PURPLES.mid },
+            { name: 'Data governance, privacy & HIPAA/HITRUST compliance', level: 80, icon: 'fas fa-shield-alt', color: PURPLES.deep }
         ]
     },
     {
