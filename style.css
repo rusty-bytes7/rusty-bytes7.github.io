@@ -95,6 +95,26 @@
     max-width: 520px; /* constrain width so bars don't span entire column */
     margin: 0 auto;
 }
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center children horizontally */
+}
 .skill-item .d-flex {
     justify-content: center; /* center icon and title */
+    width: 100%;
+}
+.skill-item .progress {
+    width: 100%;
+}
+.skill-item h5 {
+    margin: 0;
+}
+.progress-bar {
+    border-radius: 6px;
+}
+
+/* progress track neutral background */
+.skill-item .progress {
+    background-color: #eee;
 }

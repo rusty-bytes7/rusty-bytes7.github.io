@@ -19,12 +19,19 @@ navLinks.forEach((l) => {
 })
 
 // Skills rendering and animation
+// purple theme colors (adjust to taste)
+const PURPLES = {
+    deep: '#4b1f6f',
+    mid: '#6f3fa6',
+    light: '#a87be0'
+};
+
 const skills = [
-    { name: 'Python', level: 85, color: 'bg-success', icon: 'fab fa-python' },
-    { name: 'SQL / Databases', level: 70, color: 'bg-info', icon: 'fas fa-database' },
-    { name: 'JavaScript / Front-end', level: 50, color: 'bg-warning', icon: 'fab fa-js' },
-    { name: 'Git / Version Control', level: 75, color: 'bg-primary', icon: 'fab fa-git' },
-    { name: 'Laboratory Skills', level: 99, color: 'bg-secondary', icon: 'fas fa-notes-medical' }
+    { name: 'Python', level: 85, color: PURPLES.mid, icon: 'fab fa-python' },
+    { name: 'SQL / Databases', level: 70, color: PURPLES.light, icon: 'fas fa-database' },
+    { name: 'JavaScript / Front-end', level: 50, color: PURPLES.deep, icon: 'fab fa-js' },
+    { name: 'Git / Version Control', level: 75, color: PURPLES.mid, icon: 'fab fa-git' },
+    { name: 'Laboratory Skills', level: 99, color: PURPLES.light, icon: 'fas fa-notes-medical' }
 ];
 
 function renderSkills() {
@@ -42,7 +49,7 @@ function renderSkills() {
                 <h5 class="mb-0">${s.name}</h5>
             </div>
             <div class="progress">
-                <div class="progress-bar ${s.color}" role="progressbar" style="width:0%" data-target="${s.level}" aria-valuemin="0" aria-valuemax="100">0%</div>
+                <div class="progress-bar" role="progressbar" style="width:0%;background:${s.color};" data-target="${s.level}" aria-valuemin="0" aria-valuemax="100">0%</div>
             </div>
         `;
 
