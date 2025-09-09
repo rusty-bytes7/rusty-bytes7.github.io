@@ -96,6 +96,13 @@
     gap: 1rem;
     align-items: center;
 }
+/* category heading */
+.skill-category h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+.skill-category { width: 100%; }
+.skill-category .skill-item { margin-left: 0; }
 .skill-item {
     width: 100%;
     max-width: 520px; /* constrain width so bars don't span entire column */

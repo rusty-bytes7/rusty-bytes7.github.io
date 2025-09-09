@@ -26,16 +26,61 @@ const PURPLES = {
     light: '#a87be0'
 };
 
-const skills = [
-    { name: 'Python', level: 85, color: PURPLES.mid, icon: 'fab fa-python' },
-    { name: 'SQL / Databases', level: 70, color: PURPLES.light, icon: 'fas fa-database' },
-    { name: 'JavaScript / Front-end', level: 50, color: PURPLES.deep, icon: 'fab fa-js' },
-    { name: 'Git / Version Control', level: 75, color: PURPLES.mid, icon: 'fab fa-git' },
-    { name: 'Laboratory Skills', level: 99, color: PURPLES.light, icon: 'fas fa-notes-medical' }
+// Categories & skills (you can edit these levels later)
+const CATEGORIES = [
+    // Core Technical Skills group (left column)
+    {
+        title: 'Core Technical Skills',
+        items: [
+            { name: 'Python (pandas, matplotlib, data analysis)', level: 85, icon: 'fab fa-python', color: PURPLES.mid },
+            { name: 'JavaScript (front-end)', level: 70, icon: 'fab fa-js', color: PURPLES.deep },
+            { name: 'SQL', level: 80, icon: 'fas fa-database', color: PURPLES.light }
+        ]
+    },
+    {
+        title: 'Software Development',
+        items: [
+            { name: 'Data structures & algorithms', level: 70, icon: 'fas fa-code', color: PURPLES.mid },
+            { name: 'Object-oriented programming', level: 75, icon: 'fas fa-cubes', color: PURPLES.mid },
+            { name: 'Software design principles', level: 70, icon: 'fas fa-project-diagram', color: PURPLES.light }
+        ]
+    },
+    {
+        title: 'Version Control & Collaboration',
+        items: [
+            { name: 'Git', level: 75, icon: 'fab fa-git', color: PURPLES.mid },
+            { name: 'GitHub', level: 75, icon: 'fab fa-github', color: PURPLES.deep },
+            { name: 'GitHub Desktop', level: 60, icon: 'fas fa-desktop', color: PURPLES.light }
+        ]
+    },
+    {
+        title: 'Web Development',
+        items: [
+            { name: 'HTML / CSS / Bootstrap', level: 65, icon: 'fab fa-html5', color: PURPLES.mid }
+        ]
+    },
+    // Healthcare IT & Data group (right column)
+    {
+        title: 'Healthcare IT & Data',
+        items: [
+            { name: 'Laboratory Information Systems (Epic Beaker)', level: 85, icon: 'fas fa-hospital', color: PURPLES.mid },
+            { name: 'Clinical Workflows & Lab Informatics', level: 80, icon: 'fas fa-notes-medical', color: PURPLES.mid },
+            { name: 'HL7 / FHIR (familiar)', level: 50, icon: 'fas fa-exchange-alt', color: PURPLES.light },
+            { name: 'Data Visualization & Dashboards (pandas, matplotlib, seaborn)', level: 80, icon: 'fas fa-chart-bar', color: PURPLES.mid }
+        ]
+    },
+    // Domain Expertise group (right column)
+    {
+        title: 'Domain Expertise',
+        items: [
+            { name: 'Clinical Laboratory Science (diagnostics, instrumentation)', level: 95, icon: 'fas fa-vials', color: PURPLES.deep },
+            { name: 'Healthcare Operations & Workflow Optimization', level: 78, icon: 'fas fa-tasks', color: PURPLES.mid },
+            { name: 'Kaizen / Continuous Improvement (KPI, Lean concepts)', level: 70, icon: 'fas fa-chart-line', color: PURPLES.light }
+        ]
+    }
 ];
 
 function renderSkills() {
-    const container = document.getElementById('skills-list');
     const left = document.getElementById('skills-list-left');
     const right = document.getElementById('skills-list-right');
     if (!left || !right) return;
@@ -58,23 +103,37 @@ function renderSkills() {
         return html;
     }
 
-    skills.forEach((s, idx) => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'mb-3 skill-item';
+    // split categories into left and right columns
+    const leftCats = CATEGORIES.slice(0, 4);
+    const rightCats = CATEGORIES.slice(4);
 
-        wrapper.innerHTML = `
-            <div class="d-flex align-items-center mb-2 justify-content-center">
-                <i class="skill-icon ${s.icon} me-2"></i>
-                <h5 class="mb-0 me-3">${s.name}</h5>
-                <div class="skill-stars">${starsMarkup(s.level)}</div>
-                <small class="text-muted ms-3">${levelToLabel(s.level)}</small>
-            </div>
-        `;
+    function renderCategory(cat, container) {
+        const catWrap = document.createElement('div');
+        catWrap.className = 'skill-category mb-3';
+        const title = document.createElement('h4');
+        title.textContent = cat.title;
+        title.className = 'text-center mb-2';
+        catWrap.appendChild(title);
 
-        // append alternately to left and right to keep balance
-        if (idx % 2 === 0) left.appendChild(wrapper);
-        else right.appendChild(wrapper);
-    });
+        cat.items.forEach(s => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'mb-3 skill-item';
+            wrapper.innerHTML = `
+                <div class="d-flex align-items-center mb-2 justify-content-center">
+                    <i class="skill-icon ${s.icon} me-2"></i>
+                    <h5 class="mb-0 me-3">${s.name}</h5>
+                    <div class="skill-stars">${starsMarkup(s.level)}</div>
+                    <small class="text-muted ms-3">${levelToLabel(s.level)}</small>
+                </div>
+            `;
+            catWrap.appendChild(wrapper);
+        });
+
+        container.appendChild(catWrap);
+    }
+
+    leftCats.forEach(cat => renderCategory(cat, left));
+    rightCats.forEach(cat => renderCategory(cat, right));
 }
 
 function animateSkills(entries, observer) {
