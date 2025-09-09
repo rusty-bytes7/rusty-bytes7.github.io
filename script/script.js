@@ -30,11 +30,11 @@ const PURPLES = {
 const CATEGORIES = [
     // Core Technical Skills group (left column)
     {
-        title: 'Core Technical Skills',
+        title: 'Core Technical Programming Skills',
         items: [
             { name: 'Python (pandas, matplotlib, data analysis)', level: 85, icon: 'fab fa-python', color: PURPLES.mid },
-            { name: 'JavaScript (front-end)', level: 70, icon: 'fab fa-js', color: PURPLES.deep },
-            { name: 'SQL', level: 80, icon: 'fas fa-database', color: PURPLES.light }
+            { name: 'JavaScript (front-end)', level: 50, icon: 'fab fa-js', color: PURPLES.deep },
+            { name: 'SQL', level: 50, icon: 'fas fa-database', color: PURPLES.light }
         ]
     },
     {
@@ -50,7 +50,6 @@ const CATEGORIES = [
         items: [
             { name: 'Git', level: 75, icon: 'fab fa-git', color: PURPLES.mid },
             { name: 'GitHub', level: 75, icon: 'fab fa-github', color: PURPLES.deep },
-            { name: 'GitHub Desktop', level: 60, icon: 'fas fa-desktop', color: PURPLES.light }
         ]
     },
     {
@@ -63,9 +62,9 @@ const CATEGORIES = [
     {
         title: 'Healthcare IT & Data',
         items: [
-            { name: 'Laboratory Information Systems (Epic Beaker)', level: 85, icon: 'fas fa-hospital', color: PURPLES.mid },
-            { name: 'Clinical Workflows & Lab Informatics', level: 80, icon: 'fas fa-notes-medical', color: PURPLES.mid },
-            { name: 'HL7 / FHIR (familiar)', level: 50, icon: 'fas fa-exchange-alt', color: PURPLES.light },
+            { name: 'Laboratory Information Systems (Epic Beaker)', level: 90, icon: 'fas fa-hospital', color: PURPLES.mid },
+            { name: 'Clinical Workflows & Lab Informatics', level: 90, icon: 'fas fa-notes-medical', color: PURPLES.mid },
+            { name: 'HL7 / FHIR (familiar)', level: 30, icon: 'fas fa-exchange-alt', color: PURPLES.light },
             { name: 'Data Visualization & Dashboards (pandas, matplotlib, seaborn)', level: 80, icon: 'fas fa-chart-bar', color: PURPLES.mid }
         ]
     },
@@ -73,9 +72,9 @@ const CATEGORIES = [
     {
         title: 'Domain Expertise',
         items: [
-            { name: 'Clinical Laboratory Science (diagnostics, instrumentation)', level: 95, icon: 'fas fa-vials', color: PURPLES.deep },
-            { name: 'Healthcare Operations & Workflow Optimization', level: 78, icon: 'fas fa-tasks', color: PURPLES.mid },
-            { name: 'Kaizen / Continuous Improvement (KPI, Lean concepts)', level: 70, icon: 'fas fa-chart-line', color: PURPLES.light }
+            { name: 'Clinical Laboratory Science (diagnostics, instrumentation)', level: 100, icon: 'fas fa-vials', color: PURPLES.deep },
+            { name: 'Healthcare Operations & Workflow Optimization', level: 80, icon: 'fas fa-tasks', color: PURPLES.mid },
+            { name: 'Kaizen / Continuous Improvement (KPI, Lean concepts)', level: 80, icon: 'fas fa-chart-line', color: PURPLES.light }
         ]
     }
 ];
