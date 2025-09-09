@@ -122,3 +122,10 @@
 .skill-item .progress {
     background-color: #eee;
 }
+
+/* star rating styles */
+.skill-star { color: #6f3fa6; } /* purple fill for filled stars */
+.skill-stars .far { color: #ddd; } /* outline color for empty stars */
+.skill-stars .fas { color: #6f3fa6; } /* filled star color */
+.skill-stars { display: inline-block; vertical-align: middle; }
+.skill-item small.text-muted { vertical-align: middle; }

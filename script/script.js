@@ -39,17 +39,37 @@ function renderSkills() {
     if (!container) return;
     const fragment = document.createDocumentFragment();
 
+    // helper: map numeric level (0-100) to qualitative label
+    function levelToLabel(level) {
+        if (level >= 90) return 'Expert';
+        if (level >= 70) return 'Advanced';
+        if (level >= 40) return 'Intermediate';
+        return 'Beginner';
+    }
+
+    // helper: return star markup (0..5) using Font Awesome
+    function starsMarkup(level) {
+        const count = Math.round(level / 20); // 0..5
+        let html = '';
+        for (let i = 1; i <= 5; i++) {
+            html += `<i class="${i <= count ? 'fas' : 'far'} fa-star skill-star me-1"></i>`;
+        }
+        return html;
+    }
+
     skills.forEach(s => {
         const wrapper = document.createElement('div');
         wrapper.className = 'mb-3 skill-item';
 
         wrapper.innerHTML = `
-            <div class="d-flex align-items-center mb-1">
+            <div class="d-flex align-items-center mb-2 justify-content-center">
                 <i class="skill-icon ${s.icon} me-2"></i>
-                <h5 class="mb-0">${s.name}</h5>
+                <h5 class="mb-0 me-3">${s.name}</h5>
+                <div class="skill-stars">${starsMarkup(s.level)}</div>
+                <small class="text-muted ms-3">${levelToLabel(s.level)}</small>
             </div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width:0%;background:${s.color};" data-target="${s.level}" aria-valuemin="0" aria-valuemax="100">0%</div>
+                <div class="progress-bar" role="progressbar" style="width:0%;background:${s.color};" data-target="${s.level}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         `;
 
