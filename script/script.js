@@ -68,9 +68,6 @@ function renderSkills() {
                 <div class="skill-stars">${starsMarkup(s.level)}</div>
                 <small class="text-muted ms-3">${levelToLabel(s.level)}</small>
             </div>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width:0%;background:${s.color};" data-target="${s.level}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
         `;
 
         fragment.appendChild(wrapper);
@@ -82,11 +79,10 @@ function renderSkills() {
 function animateSkills(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const bars = entry.target.querySelectorAll('.progress-bar');
-            bars.forEach(bar => {
-                const target = bar.getAttribute('data-target');
-                bar.style.width = target + '%';
-                bar.textContent = target + '%';
+            const items = entry.target.querySelectorAll('.skill-item');
+            items.forEach((it, idx) => {
+                // stagger reveal slightly
+                setTimeout(() => it.classList.add('skill-reveal'), idx * 120);
             });
             observer.unobserve(entry.target);
         }

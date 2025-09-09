@@ -123,6 +123,17 @@
     background-color: #eee;
 }
 
+/* reveal animation for skills */
+.skill-item {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 420ms ease, transform 420ms ease;
+}
+.skill-item.skill-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* star rating styles */
 .skill-star { color: #6f3fa6; } /* purple fill for filled stars */
 .skill-stars .far { color: #ddd; } /* outline color for empty stars */
