@@ -106,12 +106,16 @@
 }
 .skill-item .progress {
     width: 100%;
+    max-width: 520px; /* keep same max width as the item */
+    margin: 0 auto;   /* center the progress container */
 }
 .skill-item h5 {
     margin: 0;
 }
 .progress-bar {
     border-radius: 6px;
+    text-align: center; /* center the percent text inside the bar */
+    padding-right: 0.25rem; /* small padding so text doesn't touch edge */
 }
 
 /* progress track neutral background */
