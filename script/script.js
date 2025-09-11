@@ -54,7 +54,7 @@ const CATEGORIES = [
         title: 'Healthcare IT & Data',
         items: [
             { name: 'Epic Beaker (LIS)', level: 95, icon: 'fas fa-hospital', color: PURPLES.mid },
-            { name: 'Data visualization & dashboards', level: 80, icon: 'fas fa-chart-bar', color: PURPLES.mid },
+            { name: 'Data visualization & dashboards', level: 60, icon: 'fas fa-chart-bar', color: PURPLES.mid },
             { name: 'Data governance, privacy & HIPAA compliance', level: 80, icon: 'fas fa-shield-alt', color: PURPLES.deep }
         ]
     },
