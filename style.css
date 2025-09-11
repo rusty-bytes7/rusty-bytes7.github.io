@@ -14,6 +14,7 @@
 /* text css above hero image*/
 .hero_title {
     font-size: 4.5rem;
+    text-shadow: 2px 2px 4px #000000;
 }
 .hero_desc {
     font-size: 2rem;
@@ -153,3 +154,7 @@
 .skill-stars .fas { color: #6f3fa6; } /* filled star color */
 .skill-stars { display: inline-block; vertical-align: middle; }
 .skill-item small.text-muted { vertical-align: middle; }
+
+.my-text {
+  text-shadow: 2px 2px 4px #000000; /* horizontal offset, vertical offset, blur, color */
+}
