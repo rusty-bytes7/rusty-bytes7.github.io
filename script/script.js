@@ -79,15 +79,7 @@ function renderSkills() {
         return 'Beginner';
     }
 
-    // helper: return star markup (0..5) using Font Awesome
-    function starsMarkup(level) {
-        const count = Math.round(level / 20); // 0..5
-        let html = '';
-        for (let i = 1; i <= 5; i++) {
-            html += `<i class="${i <= count ? 'fas' : 'far'} fa-star skill-star me-1"></i>`;
-        }
-        return html;
-    }
+    // removed star markup helper — switching to tag-and-level chips below
 
     // distribute categories alternately between left and right for balance
     CATEGORIES.forEach((cat, idx) => {
@@ -102,12 +94,18 @@ function renderSkills() {
         cat.items.forEach(s => {
             const wrapper = document.createElement('div');
             wrapper.className = 'mb-3 skill-item';
+            const levelLabel = levelToLabel(s.level);
+            const safeColor = s.color || '#6c757d';
             wrapper.innerHTML = `
-                <div class="d-flex align-items-center mb-2 justify-content-center">
-                    <i class="skill-icon ${s.icon} me-2"></i>
-                    <h5 class="mb-0 me-3">${s.name}</h5>
-                    <div class="skill-stars">${starsMarkup(s.level)}</div>
-                    <small class="text-muted ms-3">${levelToLabel(s.level)}</small>
+                <div class="d-flex align-items-center justify-content-between skill-chip p-2">
+                    <div class="d-flex align-items-center">
+                        <i class="skill-icon ${s.icon} me-2"></i>
+                        <span class="skill-name h6 mb-0">${s.name}</span>
+                    </div>
+                    <span class="level-pill ms-3" role="status" aria-label="${levelLabel}"
+                          style="background:${safeColor}; color: #fff; padding: .25rem .6rem; border-radius:999px; font-weight:600; font-size:.85rem;">
+                        ${levelLabel}
+                    </span>
                 </div>
             `;
             catWrap.appendChild(wrapper);
