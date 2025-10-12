@@ -34,7 +34,7 @@ const CATEGORIES = [
         items: [
             { name: 'Python (pandas, matplotlib)', level: 85, icon: 'fab fa-python', color: PURPLES.mid },
             { name: 'SQL', level: 50, icon: 'fas fa-database', color: PURPLES.light },
-            { name: 'JavaScript (front-end)', level: 70, icon: 'fab fa-js', color: PURPLES.deep }
+            { name: 'JavaScript (front-end)', level: 30, icon: 'fab fa-js', color: PURPLES.deep }
         ]
     },
     {
