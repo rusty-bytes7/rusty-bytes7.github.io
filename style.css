@@ -3,12 +3,16 @@
   background-color: #6f3fa6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* hero background image */
 .bgimage {
   height: 100vh;
-  background: url("images/IMG_4971.JPG");
+  background: url("images/IMG_0120.jpg");
   background-size: cover;
-  background-position: center 15%;
+  background-position: center 25%;
   position: center;
 }
 /* text css above hero image*/
@@ -74,6 +78,15 @@
 
 #footer .social-icons a:hover {
   color: #6f3fa6;
+}
+
+#footer .social-icons i,
+#footer .social-icons svg,
+#footer .social-icons .fab,
+#footer .social-icons .fas,
+#footer .social-icons .far,
+#footer .social-icons .fa {
+  color: inherit;
 }
 
 /* button color change */
@@ -190,4 +203,14 @@
 
 .my-text {
   text-shadow: 2px 2px 4px #000000; /* horizontal offset, vertical offset, blur, color */
+}
+
+/* about section text size */
+#about p,
+#about li {
+  font-size: 1.5rem;
+}
+
+#about .lead {
+  font-size: 1.6rem;
 }
