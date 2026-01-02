@@ -3,6 +3,10 @@
   background-color: #6f3fa6;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -10,7 +14,8 @@ html {
 /* hero background image */
 .bgimage {
   height: 100vh;
-  background: url("images/IMG_0120.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("images/IMG_0120.jpg");
   background-size: cover;
   background-position: center 25%;
   position: center;
@@ -100,6 +105,20 @@ html {
   height: 300px; /* Set your desired height */
   object-fit: cover; /* Ensures the image covers the area and is cropped evenly */
   width: 100%; /* Ensures full width of the card */
+}
+
+.portfolioContent {
+  height: 100%;
+  width: 100%;
+}
+
+.portfolioContent .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolioContent .card-body .text-center {
+  margin-top: auto;
 }
 
 /* skills section styling */
@@ -213,4 +232,23 @@ html {
 
 #about .lead {
   font-size: 1.6rem;
+}
+
+/* Portfolio Card Hover Effect */
+.portfolioContent {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolioContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Back to top button */
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 99;
 }

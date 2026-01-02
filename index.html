@@ -11,6 +11,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/c61ce7b745.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="images/terminal.png">
 </head>
 
@@ -101,7 +105,7 @@
             <h1 class="text-center">Portfolio</h1>
             <div class="row">
                 <div class="col-lg-4 mt-4">
-                    <div class="card">
+                   <div class="card portfolioContent">
                         <img class="card-img-top" src="images/pills.png" alt="Card image" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">C# Medicine Tracker App</h4>
@@ -148,7 +152,7 @@
                             <h4 class="card-title">Rusty Markov Decision Process</h4>
                             <p class="card-text">This was my final project for my Artificial Intelligence course, a Python implementation of a Markov Decision Process.</p>
                             <div class="text-center">
-                                <a href="https://rusty-bytes.neocities.org/AI_Final_Project.pdf" class="btn btn-success">Link</a>
+                                <a href="https://drive.google.com/file/d/1ldyATWkdC2tLu8VPPP-tm0rIDiGG9nBl/view?usp=sharing" class="btn btn-success">Link</a>
                             </div>
                         </div>
                     </div>
@@ -156,7 +160,7 @@
 
                 <div class="col-lg-4 mt-4">
                     <div class="card portfolioContent">
-                        <img class="card-img-top" src="https://files.catbox.moe/iuefzd.jpg" alt="Card image" style="width:100%">
+                        <img class="card-img-top" src="images/recipe.png" alt="Card image" style="width:100%">
                         <div class="card-body">
                             <h4 class="card-title">Full-Stack Recipe Sharing App</h4>
                             <p class="card-text">This is a full-stack web application for sharing and discovering recipes, made using the MERN stack (MongoDB, Express, React, Node.js).</p>
@@ -179,6 +183,23 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="card portfolioContent">
+                        <img class="card-img-top" src="images/Happy_baby.gif" alt="Card image" style="width:cover">
+                        <div class="card-body">
+                            <h4 class="card-title">Pi-Magotchi</h4>
+                            <p class="card-text">This is a Raspberry Pi Zero version of a Tamagotchi-style virtual pet, coded 100% in Python.</p>
+                            <div class="text-center">
+                                <a href="https://github.com/rusty-bytes7/tamagotchi_project" class="btn btn-success">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
     </section>
 
@@ -230,10 +251,16 @@
                 <a href="https://www.github.com/rusty-bytes7" target="_blank"><i class="fab fa-brands fa-github"></i></a>
                 
                 <a href="https://www.linkedin.com/in/e1wolf/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href = "https://drive.google.com/file/d/1VF95C8V1JIXLZedvgEKLeYbZPKTfSUmj/view?usp=sharing" target="_blank"><i class="fa fa-file"></i></a>
+                <a title="Get a copy of my resume!" href="https://drive.google.com/file/d/1VF95C8V1JIXLZedvgEKLeYbZPKTfSUmj/view?usp=sharing" target="_blank"><i class="fa fa-file"></i></a>
             </div>
+            <p class="text-center text-white mt-3">&copy; <span id="year"></span> Erica Wolf</p>
         </div>
     </footer>
+
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-success btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fas fa-arrow-up"></i> Back to top
+    </button>
 
     <!-- load javascript after loading all html content -->
     <script src="script/script.js?v=2"></script>
